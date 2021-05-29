@@ -1,2 +1,49 @@
-# Convert-time-from-HH-MM-SS-format-to-seconds-using-class-program-in-C-
-/*C++ program to read time in HH:MM:SS format and convert into total seconds.*/   #include &lt;iostream> #include &lt;iomanip>   using namespace std;   class Time {     private:         int seconds;         int hh,mm,ss;     public:         void getTime(void);         void convertIntoSeconds(void);         void displayTime(void); };   void Time::getTime(void) {     cout &lt;&lt; "Enter time:" &lt;&lt; endl;     cout &lt;&lt; "Hours?   ";          cin >> hh;     cout &lt;&lt; "Minutes? ";          cin >> mm;     cout &lt;&lt; "Seconds? ";          cin >> ss; }   void Time::convertIntoSeconds(void) {     seconds = hh*3600 + mm*60 + ss; }   void Time::displayTime(void) {     cout &lt;&lt; "The time is = " &lt;&lt; setw(2) &lt;&lt; setfill('0') &lt;&lt; hh &lt;&lt; ":"                              &lt;&lt; setw(2) &lt;&lt; setfill('0') &lt;&lt; mm &lt;&lt; ":"                              &lt;&lt; setw(2) &lt;&lt; setfill('0') &lt;&lt; ss &lt;&lt; endl;     cout &lt;&lt; "Time in total seconds: " &lt;&lt; seconds; }   int main() {     Time T; //creating objects           T.getTime();     T.convertIntoSeconds();     T.displayTime();           return 0; }
+/*C++ program to read time in HH:MM:SS format and convert into total seconds.*/
+ 
+#include <iostream>
+#include <iomanip>
+ 
+using namespace std;
+ 
+class Time
+{
+    private:
+        int seconds;
+        int hh,mm,ss;
+    public:
+        void getTime(void);
+        void convertIntoSeconds(void);
+        void displayTime(void);
+};
+ 
+void Time::getTime(void)
+{
+    cout << "Enter time:" << endl;
+    cout << "Hours?   ";          cin >> hh;
+    cout << "Minutes? ";          cin >> mm;
+    cout << "Seconds? ";          cin >> ss;
+}
+ 
+void Time::convertIntoSeconds(void)
+{
+    seconds = hh*3600 + mm*60 + ss;
+}
+ 
+void Time::displayTime(void)
+{
+    cout << "The time is = " << setw(2) << setfill('0') << hh << ":"
+                             << setw(2) << setfill('0') << mm << ":"
+                             << setw(2) << setfill('0') << ss << endl;
+    cout << "Time in total seconds: " << seconds;
+}
+ 
+int main()
+{
+    Time T; //creating objects
+     
+    T.getTime();
+    T.convertIntoSeconds();
+    T.displayTime();
+     
+    return 0;
+}
